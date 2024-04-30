@@ -2,8 +2,8 @@ module OpenFeature
   module SDK
     # Used to combine evaluation contexts from different sources
     class EvaluationContextBuilder
-      def call(api_context:, client_context:, invocation_context:)
-        available_contexts = [api_context, client_context, invocation_context].compact
+      def call(api_context: nil, client_context: nil, invocation_context: nil, before_hooks_context: nil)
+        available_contexts = [api_context, client_context, invocation_context, before_hooks_context].compact
 
         return nil if available_contexts.empty?
 

@@ -26,6 +26,8 @@ module OpenFeature
         REASON_NO_OP = "No-op"
         NAME = "No-op Provider"
 
+        include OpenFeature::SDK::Hooks::Hookable
+
         attr_reader :metadata
 
         def initialize

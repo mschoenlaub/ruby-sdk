@@ -33,6 +33,7 @@ module OpenFeature
       extend Forwardable
 
       def_delegators :configuration, :provider, :set_provider, :hooks, :evaluation_context
+      def_delegators :configuration, :add_hook, :add_hooks
 
       def configuration
         @configuration ||= Configuration.new

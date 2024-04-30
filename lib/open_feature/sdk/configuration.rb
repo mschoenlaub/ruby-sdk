@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "api"
+require_relative "hooks/hookable"
 
 module OpenFeature
   module SDK
@@ -10,11 +11,11 @@ module OpenFeature
     # method
     class Configuration
       extend Forwardable
+      include OpenFeature::SDK::Hooks::Hookable
 
-      attr_accessor :evaluation_context, :hooks
+      attr_accessor :evaluation_context
 
       def initialize
-        @hooks = []
         @providers = {}
       end
 

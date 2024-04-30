@@ -4,6 +4,7 @@ module OpenFeature
       # TODO: Add evaluation context support
       class InMemoryProvider
         NAME = "In-memory Provider"
+        include OpenFeature::SDK::Hooks::Hookable
 
         attr_reader :metadata
 

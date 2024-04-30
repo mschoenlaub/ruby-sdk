@@ -5,6 +5,7 @@ RSpec.describe OpenFeature::SDK::EvaluationContextBuilder do
   let(:api_context) { OpenFeature::SDK::EvaluationContext.new("targeting_key" => "api", "api" => "key") }
   let(:client_context) { OpenFeature::SDK::EvaluationContext.new("targeting_key" => "client", "client" => "key") }
   let(:invocation_context) { OpenFeature::SDK::EvaluationContext.new("targeting_key" => "invocation", "invocation" => "key") }
+  let(:before_hooks_context) { OpenFeature::SDK::EvaluationContext.new("targeting_key" => "before_hooks", "bf" => "key") }
 
   describe "#call" do
     context "when no available contexts" do
