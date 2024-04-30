@@ -6,7 +6,11 @@ require "open_feature/sdk"
 
 require "markly"
 
-require "debug"
+begin
+  require "debug"
+rescue LoadError
+  # ignore
+end
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
